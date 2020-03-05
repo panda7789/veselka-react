@@ -1,38 +1,43 @@
 import React from 'react';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom";
-import Index from '../pages/index';
+import { LinkContainer } from 'react-router-bootstrap';
+import { Col, Nav, NavDropdown } from 'react-bootstrap';
+
 
 export default function Menu() {
     return (
-        <Router>
-            <div>
-                <nav>
-                <ul>
-                    <li>
-                    <Link to="/pages/index">Home</Link>
-                    </li>
-                    <li>
-                    <Link to="/pages/index">About</Link>
-                    </li>
-                    <li>
-                    <Link to="/pages/index">Users</Link>
-                    </li>
-                </ul>
-                </nav>
-
-                {/* A <Switch> looks through its children <Route>s and
-                    renders the first one that matches the current URL. */}
-                <Switch>
-                <Route path="/pages/index">
-                    <Index />
-                </Route>
-                </Switch>
-            </div>
-        </Router>
+        <Col style={{ padding_tom: "5px" }}>
+            <Nav variant="tabs"
+            >
+                <LinkContainer to="/pages/index">
+                    <Nav.Item as={Nav.Link}>
+                        Domů
+                    </Nav.Item>
+                </LinkContainer>
+                <LinkContainer to="/pages/index">
+                    <Nav.Item as={Nav.Link}>
+                        Aktuality
+                    </Nav.Item>
+                </LinkContainer>
+                <LinkContainer to="/pages/index">
+                    <Nav.Item as={Nav.Link}>
+                        Plánované akce
+                    </Nav.Item>
+                </LinkContainer>
+                <LinkContainer to="/pages/obsazeni">
+                    <Nav.Item as={Nav.Link}>
+                        Obsazení
+                    </Nav.Item>
+                </LinkContainer>
+                <NavDropdown title="Galerie">
+                        <NavDropdown.Item tag={LinkContainer} to={'/pages/index'}>Fotogalerie</NavDropdown.Item>
+                        <NavDropdown.Item tag={LinkContainer} to={'/pages/index'}>Videa</NavDropdown.Item>
+                </NavDropdown>
+                <LinkContainer to="/pages/index">
+                    <Nav.Item as={Nav.Link}>
+                        Kontakty
+                    </Nav.Item>
+                </LinkContainer>
+            </Nav>
+        </Col >
     );
 }
