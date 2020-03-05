@@ -1,0 +1,147 @@
+.enjoy-css {
+	height:100px;
+	width:100%;
+	background:
+	linear-gradient(rgba(156, 154, 254, 0), rgba(156, 154, 254, 0), rgba(255, 255, 255, 0), rgba(255, 255, 255, 0), rgb(255, 255, 255, 1)), url(/head.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+ }
+ 
+ .box-shadow {
+	 box-shadow: 0 0 8px rgba(0,0,0,0.25);
+	 margin-top: 20px;
+	 padding-top: 10px;
+	 padding-left: 10px;
+	 padding-right: 10px;
+	 margin-bottom: 20px;
+ }
+ 
+ .content {
+	 padding: 10px;
+ }
+
+ .thumb {
+	 width:100%;
+	 padding:5px;
+ }
+
+ .right {
+	 padding-top :50px;
+ }
+
+ .nadpis {
+	font-family: 'Passion One', cursive;
+	font-size: 40px;
+	color: white;	
+	letter-spacing: 1px;
+	-webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: #008cff;
+	  position:absolute;
+	  bottom:0px;
+	  left: 0; 
+	  right: 0; 
+	  margin-left: auto; 
+	  margin-right: auto; 
+ }
+
+ .article {
+	box-shadow: 0 0 8px rgba(0,0,0,0.25);
+	 margin-top: 20px;
+	 padding-top: 10px;
+	 padding-left: 10px;
+	 padding-right: 10px;
+ }
+
+ h3 .display-4 {
+	 font-size:10px !important;
+ }
+
+ .article-images {
+	 margin-bottom:20px;
+ }
+ 
+ #collapseExample.collapse:not(.show) {
+	display: block;
+	height: 0px;
+	overflow: hidden;
+ }
+ 
+ #collapseExample.collapsing {
+	height: 2rem;
+ }
+ 
+ #collapseButton.collapsed::after {
+	 float:right;
+	content: '▼ Více obrázků';
+	margin: 15px;
+ }
+ 
+ #collapseButton:not(.collapsed)::after {
+	float:right;
+	content: '◄ Méně obrázků';
+	margin: 15px;
+ }
+
+ #mapka{
+	width: 350px;
+	height: 270px;
+ }
+
+ #facebook{
+	width:360px;
+	height:500px;
+ }
+ #facebook-aktuality {
+	padding-top:0px;
+}
+
+ @media (min-width: 576px) { 
+	.enjoy-css{
+		display:block;
+		height:325px;
+		border-radius: 10px;
+	}
+	.nadpis {
+		font-size: 90px;
+		  bottom:-38px;
+		  left: 0; 
+		  right: 0; 
+		  margin-left: auto;
+		  margin-right: auto;
+		  -webkit-text-stroke-width: 3px;
+	 }
+	 .content {
+		padding: 50px;
+	}
+	.thumb {
+		width:200px;
+		padding:5px;
+	}
+	.thumb-max {
+		width:300px;
+		padding:5px;
+	}
+	#mapka {
+		width: 340px;
+	}
+	#facebook {
+		width: 340px;
+		height: 500px;
+	}
+	#facebook-aktuality {
+		padding-top:90px;
+	}
+  }
+ 
+ @media (min-width: 768px) { 
+	
+  }
+
+ @media (min-width: 992px) { 
+
+  }
+
+ @media (min-width: 1200px) { 
+
+  }
+
