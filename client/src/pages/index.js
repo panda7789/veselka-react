@@ -3,7 +3,7 @@ import { Col } from 'react-bootstrap';
 
 export default function Index() {
   return (
-    <div>
+    <>
     <Col sm={8} lg={8}>
       <div className="content">
           <h1 className="display-4">O kapele</h1>
@@ -103,6 +103,6 @@ export default function Index() {
           ></iframe>
         </div>
     </Col>
-    </div>
+    </>
   );
 }
