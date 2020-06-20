@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const image = require('./image');
 
 const { Schema } = mongoose;
 
@@ -10,13 +11,7 @@ const requiredString = ({
 const articleSchema = new Schema({
     title: requiredString,
     text: requiredString,
-    images: [{ 
-        url: String,
-        showInGallery: {
-            type: Boolean,
-            default: false
-        }
-    }]
+    images: [image.schema]
 });
 
 const Article = mongoose.model('Article', articleSchema);

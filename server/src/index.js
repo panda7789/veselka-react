@@ -3,10 +3,10 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const cors = require('cors');
 const mongoose = require('mongoose');
+var bodyParser = require('body-parser');
 require('dotenv').config();
 
 const middlewares = require('./middlewares');
-const articles = require('./api/controllers/article');
 
 const app = express();
 
@@ -18,10 +18,13 @@ mongoose.connect(process.env.DATABASE_URL, {
 app.use(morgan('common'));
 app.use(helmet());
 app.use(cors({
-    origin: process.env.CORS_ORIGIN,
+    origin: ["http://localhost:3000", "http://localhost:3001"]
 }));
 
-app.use(express.json());
+
+
+app.use(bodyParser.json({limit: '50mb'}));
+app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
 
 var routes = require('./api/routes/articleRoutes');
 routes(app);
