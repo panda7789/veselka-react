@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Datagrid, Edit, Create, SimpleForm, TextField, EditButton, TextInput, ImageInput, ImageField } from 'react-admin';
+import { List, Datagrid, Edit, Create, SimpleForm, TextField, CheckboxGroupInput, EditButton, TextInput, ImageInput, ImageField } from 'react-admin';
 import RichTextInput from 'ra-input-rich-text';
 import BookIcon from '@material-ui/icons/Book';
 export const ArticleIcon = BookIcon;
@@ -23,6 +23,8 @@ export const ArticleEdit = (props) => (
             <TextInput disabled source="id"/>
             <TextInput source="title" />
             <RichTextInput source="text" />
+            <CheckboxGroupInput>
+            </CheckboxGroupInput>
             <ImageInput source="images" multiple={true} label="Pictures" accept="image/*">
                 <ImageField source="src" title="title" />
             </ImageInput>

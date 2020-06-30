@@ -3,12 +3,14 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const cors = require('cors');
 const mongoose = require('mongoose');
-var bodyParser = require('body-parser');
+const bodyParser = require('body-parser');
 require('dotenv').config();
 
 const middlewares = require('./middlewares');
 
 const app = express();
+
+var akceRouters = require('./api/routes/akceRoutes');
 
 mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
@@ -20,14 +22,14 @@ app.use(helmet());
 app.use(cors({
     origin: ["http://localhost:3000", "http://localhost:3001"]
 }));
+app.use(bodyParser.json())
 
 
 
-app.use(bodyParser.json({limit: '50mb'}));
-app.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
+app.use('/api/akce', akceRouters);
+//app.use('/img', express.static('uploads'));
+//app.use('/api/articles', require('./api/routes/articleRoutes'));
 
-var routes = require('./api/routes/articleRoutes');
-routes(app);
 
 app.use(middlewares.notFound);
 app.use(middlewares.otherError);

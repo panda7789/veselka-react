@@ -18,7 +18,7 @@ export default function Menu() {
                         Aktuality
                     </Nav.Item>
                 </LinkContainer>
-                <LinkContainer to="/pages/akce">
+                <LinkContainer to="/pages/index">
                     <Nav.Item as={Nav.Link}>
                         Plánované akce
                     </Nav.Item>
