@@ -13,7 +13,7 @@ export default function Menu() {
                         Domů
                     </Nav.Item>
                 </LinkContainer>
-                <LinkContainer to="/pages/index">
+                <LinkContainer to="/pages/aktuality">
                     <Nav.Item as={Nav.Link}>
                         Aktuality
                     </Nav.Item>

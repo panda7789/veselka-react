@@ -11,6 +11,7 @@ const middlewares = require('./middlewares');
 const app = express();
 
 var akceRouters = require('./api/routes/akceRoutes');
+var aktualityRouters = require('./api/routes/aktualityRoutes');
 
 mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
@@ -27,6 +28,7 @@ app.use(bodyParser.json())
 
 
 app.use('/api/akce', akceRouters);
+app.use('/api/aktuality', aktualityRouters);
 //app.use('/img', express.static('uploads'));
 //app.use('/api/articles', require('./api/routes/articleRoutes'));
 

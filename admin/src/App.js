@@ -2,7 +2,8 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Sidebar } from './components/sidebar';
 import { Switch, Route } from 'react-router-dom';
-import { Aktuality } from './pages/aktuality';
+import { AktualityListPage } from './pages/aktuality';
+import { AktualityAddEditPage } from './pages/aktuality_add_edit';
 import { AkceListPage } from './pages/akce_list';
 import { AkceAddEditPage } from './pages/akce_add_edit';
 //import { LoginModal } from './components/loginModal';
@@ -20,10 +21,12 @@ class Menu extends React.Component {
                     <Col xs={9} id="page-content-wrapper">
                       <Switch>
                           <Route exact path='/' component={Home} />
-                          <Route exact path='/aktuality' component={Aktuality} />
                           <Route exact path='/akce' component={AkceListPage} />
                           <Route exact path='/akce_add' component={AkceAddEditPage} />
                           <Route path='/akce_edit/:id' component={AkceAddEditPage} />
+                          <Route exact path='/aktuality' component={AktualityListPage} />
+                          <Route exact path='/aktuality_add' component={AktualityAddEditPage} />
+                          <Route path='/aktuality_edit/:id' component={AktualityAddEditPage} />
                           <Route render={function (path) {
                               return <p>aaa</p>
                           }} />

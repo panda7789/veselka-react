@@ -7,7 +7,7 @@ export default function Obsazeni() {
   return (
     <Col sm={12}>
       <div className="content">
-        <h3>Obsazení</h3>
+        <h3 class={"display-4"}>Obsazení</h3>
         <br></br>
         <Accordion onSelect={e => setActiveKey(e)} defaultActiveKey={0}>
           <CardCollapse title='Zpěvy' names={['Soňa Rifflerová','Markéta Tichá','Pavel Braun']} id={0} activeKey={activeKey} />
@@ -37,8 +37,8 @@ class CardCollapse extends React.Component {
       
       <Card>
         <Accordion.Toggle as={Card.Header} variant="link" eventKey={this.props.id} onClick={this.clickHandler}>
-        <i className={iconClassNames + " fa float-right"}></i>
-          <h5>
+        <i style={{fontWeight:"900", color:"#007bff"}} className={iconClassNames + " fa float-right"}></i>
+          <h5 className={"obsazeni-a"}>
             {this.props.title}
           </h5>
         </Accordion.Toggle>

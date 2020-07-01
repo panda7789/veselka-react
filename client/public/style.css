@@ -103,6 +103,16 @@
 	padding-top:0px;
 }
 
+.obsazeni-a{
+	color: #007bff;
+    text-decoration: none;
+    background-color: transparent;
+}
+.obsazeni-a:hover{
+	color: #0056b3;
+    text-decoration: underline;
+}
+
  @media (min-width: 576px) { 
 	.enjoy-css{
 		display:block;

@@ -7,6 +7,7 @@ import {
 import Index from '../pages/index';
 import Obsazeni from '../pages/obsazeni';
 import { Akce } from '../pages/akce';
+import { Aktuality } from '../pages/aktuality';
 
 class Content extends React.Component {
     render() {
@@ -23,6 +24,9 @@ class Content extends React.Component {
                 </Route>
                 <Route path="/pages/akce">
                     <Akce />
+                </Route>
+                <Route path="/pages/aktuality">
+                    <Aktuality />
                 </Route>
             </Switch>
         )
