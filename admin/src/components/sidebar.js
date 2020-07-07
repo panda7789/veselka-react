@@ -19,6 +19,13 @@ export const Sidebar = props => {
                         </Button>
                     </Nav.Link>
                 </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link href="/galerie">
+                        <Button variant="primary" size="sm" block>                        
+                            Galerie
+                        </Button>
+                    </Nav.Link>
+                </Nav.Item>
             </Nav>
         </>
         );

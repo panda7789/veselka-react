@@ -23,8 +23,9 @@ router.get('/:id', function(req, res) {
     });
 });
 router.post('/', function(req, res) {
-    var aktualita = new Aktuality(req.body);
-    aktualita.save((err, result) => {
+    var akt = new Aktuality(req.body);
+
+    akt.save((err, result) => {
         if (err){
             console.log(err);
             res.json(err);
@@ -32,15 +33,24 @@ router.post('/', function(req, res) {
         res.json(result);
     })
 });
-router.put('/:id', function(req, res) {
-    var aktualita = new Aktuality(req.body);
-    aktualita.save((err, result) => {
+router.put('/:id', (req, res) => {
+    Aktuality.findById(req.params.id, (err, result) => {
         if (err){
             console.log(err);
             res.json(err);
         }
-        res.json(result);
-    })
+        console.log(result);
+        result.title = req.body.title;
+        result.text = req.body.text;
+        result.images = req.body.images;
+        result.save(err => {
+            if (err){
+                console.log(err);
+                res.json(err);
+            }
+            res.json(result);
+        });
+    });
 });
 router.delete('/:id', function(req, res) {
     Aktuality.deleteOne({ _id: req.params.id}, (err) => {

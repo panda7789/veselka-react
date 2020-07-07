@@ -8,12 +8,12 @@ const requiredString = ({
     required: true
 })
 
-const aktualitaSchema = new Schema({
+const aktualitySchema = new Schema({
     title: requiredString,
     text: requiredString,
     images: [image.schema]
 });
 
-const Aktuality = mongoose.model('Aktuality', aktualitaSchema);
+const Aktuality = mongoose.model('Aktuality', aktualitySchema);
 
 module.exports = Aktuality;

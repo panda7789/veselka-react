@@ -99,3 +99,4 @@ dist
 # TernJS port file
 .tern-port
 admin/package-lock.json
+server/s3_aws.json

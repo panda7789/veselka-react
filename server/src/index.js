@@ -12,6 +12,7 @@ const app = express();
 
 var akceRouters = require('./api/routes/akceRoutes');
 var aktualityRouters = require('./api/routes/aktualityRoutes');
+var imageRoutes = require('./api/routes/imageRoutes');
 
 mongoose.connect(process.env.DATABASE_URL, {
     useNewUrlParser: true,
@@ -23,12 +24,17 @@ app.use(helmet());
 app.use(cors({
     origin: ["http://localhost:3000", "http://localhost:3001"]
 }));
+app.use(bodyParser.urlencoded({
+    extended: false
+}));
 app.use(bodyParser.json())
+
 
 
 
 app.use('/api/akce', akceRouters);
 app.use('/api/aktuality', aktualityRouters);
+app.use('/api/images', imageRoutes);
 //app.use('/img', express.static('uploads'));
 //app.use('/api/articles', require('./api/routes/articleRoutes'));
 
