@@ -8,6 +8,17 @@ const AWS = require('aws-sdk');
 AWS.config.loadFromPath('s3_aws.json');
 s3 = new AWS.S3({apiVersion: '2006-03-01'});
 
+router.get('/', async (req, res) => {
+    try {
+        var dbResult = await Image.find().skip(parseInt(req.query.offset) ?? 0).limit(parseInt(req.query.limit) ?? 0);
+        dbResult = JSON.stringify(dbResult).replace(/_id/g, "id");
+        res.json(JSON.parse(dbResult));
+    } catch (err) {
+        console.log(err);
+        res.send(err);
+    }
+});
+
 router.post('/', upload.any(), (req, res) => {
     try {
         var resultImages = new Array();
